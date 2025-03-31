@@ -6,8 +6,8 @@
     <title>Countdown Timer</title>
     <style>
         @font-face {
-            font-family: 'Oi-Regular.ttf';
-            src: url('Oi-Regular.ttf') format('truetype');
+            font-family: 'MyBrandFont';
+            src: url('my-brand-font.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -17,7 +17,7 @@
             background-size: cover;
             text-align: center;
             color: black;
-            font-family: 'Oi-Regular.ttf', Arial, sans-serif;
+            font-family: 'MyBrandFont', Arial, sans-serif;
             position: relative;
             height: 100vh;
             margin: 0;
@@ -32,49 +32,22 @@
 
         #countdown {
             font-size: 80px;
-            font-family: 'Oi-Regular.ttf', Arial, sans-serif;
-        }
-    </style>
-</head>
-
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
-    <style>
-        body {
-            background: url('Introductory Board.png') no-repeat center center fixed;
-            background-size: cover;
-            text-align: center;
-            color: black;
-            font-family: Arial, sans-serif;
-            position: relative;
-            height: 100vh;
-            margin: 0;
-        }
-        #countdown-container {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            text-align: left;
-        }
-        #countdown {
-            font-size: 80px;
+            font-family: 'MyBrandFont', Arial, sans-serif;
         }
     </style>
 </head>
 <body>
 
     <div id="countdown-container">
-        <h1>Countdown to the end of the exhibition </h1>
+        <h1>Countdown to Event</h1>
         <div id="countdown"></div>
     </div>
 
     <script>
         function startCountdown(targetDate) {
             function updateCountdown() {
-                let now = new Date().getTime();
+                let now = new Date().toLocaleString("en-US", { timeZone: "Asia/Ho_Chi_Minh" });
+                now = new Date(now).getTime();
                 let distance = targetDate - now;
 
                 let days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -95,8 +68,8 @@
             updateCountdown(); // Run once to avoid delay
         }
 
-        // Set your target date here (Year, Month (0-11), Day, Hour, Minute)
-        let eventDate = new Date(2025, 4, 12, 12, 0, 0).getTime(); 
+        // Set your target date in Vietnam timezone (April 12, 2025, 00:00 Vietnam Time)
+        let eventDate = new Date("2025-04-12T00:00:00+07:00").getTime(); 
         startCountdown(eventDate);
     </script>
 
