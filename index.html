@@ -18,6 +18,13 @@
             font-weight: normal;
             font-style: normal;
         }
+        @keyframes gradientShift {
+    0% { background: linear-gradient(90deg,  #FF5700, #FE9C00); }
+    25% { background: linear-gradient(90deg, #FE9C00, #027DBD); }
+    50% { background: linear-gradient(90deg, #027DBD, #5F7F28); }
+    75% { background: linear-gradient(90deg, #5F7F28, #FF5700); }
+    100% { background: linear-gradient(90deg,#FF5700, #FE9C00); }
+}
 
         /* Video background styling */
         #background-video {
@@ -41,7 +48,7 @@
 
         #countdown-container {
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             left: 20px;
             text-align: left;
         }
@@ -49,9 +56,10 @@
         #countdown {
             font-size: 80px;
             font-family: 'Oi-Regular.ttf', Arial, sans-serif;
-            background: linear-gradient(90deg,  #FF5700, #FF9C00);
+            background: linear-gradient(90deg, #FF5733, #FFC300);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: gradientShift 5s infinite alternate;
         }
 
         h1 {
@@ -68,7 +76,7 @@
     </video>
 
     <div id="countdown-container">
-        <h1>Countdown to the end of the Event</h1>
+        <h1>Countdown to the end of the Exhibition</h1>
         <div id="countdown"></div>
     </div>
 
