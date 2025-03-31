@@ -46,31 +46,12 @@
             text-align: left;
         }
 
-#countdown-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-#countdown-shadow {
-    position: absolute;
-    top: 5px; /* Moves shadow down */
-    left: 5px; /* Moves shadow right */
-    font-size: 80px;
-    font-family: 'Oi-Regular.ttf', Arial, sans-serif;
-    color: black; /* Shadow color */
-    z-index: 0; /* Puts it behind the main text */
-}
-
-#countdown {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 80px;
-    font-family: 'Oi-Regular.ttf', Arial, sans-serif;
-    color: ##ff5700; /* Main text color */
-    z-index: 1; /* Ensures text is above the shadow */
-}
-
+        #countdown {
+            font-size: 100px;
+            font-family: 'Oi-Regular.ttf', Arial, sans-serif;
+            background: linear-gradient(90deg,  #FF5700, #FF9C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         h1 {
@@ -86,13 +67,10 @@
         Your browser does not support the video tag.
     </video>
 
-<div id="countdown-container">
-    <h1>Countdown to the end of the exhibition</h1>
-    <div id="countdown-wrapper">
-        <span id="countdown-shadow"></span>
-        <span id="countdown"></span>
+    <div id="countdown-container">
+        <h1>Countdown to the end of the Event</h1>
+        <div id="countdown"></div>
     </div>
-</div>
 
     <script>
         function startCountdown(targetDate) {
